@@ -89,6 +89,17 @@ function validateConfirmPwd() {
 }
 // Event listeners
 
+form.addEventListener("submit", (e) => {
+  // if any of its controls have invalid, dont submit
+  if (!form.checkValidity()) {
+    e.preventDefault();
+  } else {
+    // stand in for submit
+    e.preventDefault();
+    form.style.backgroundColor = "green";
+  }
+});
+
 email.addEventListener("input", (e) => {
   validateEmail();
   renderError(email);
