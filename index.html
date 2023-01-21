@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js" defer></script>
+  </head>
+
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form > div {
+      display: flex;
+      /* flex-direction: column; */
+      flex-wrap: wrap;
+      justify-content: space-between;
+      /* align-items: center; */
+      border: solid;
+
+      margin: 5px;
+      padding: 2px;
+    }
+
+    form > div > * {
+      flex: 1;
+      width: 200px;
+    }
+
+    button {
+      width: 100px;
+    }
+
+    span {
+      background-color: red;
+      font-size: 0.5rem;
+      font-family: ubuntu;
+    }
+
+    span.hide {
+      /* display: none; */
+      visibility: hidden;
+    }
+  </style>
+
+  <body>
+    <form action="" novalidate>
+      <div class="email">
+        <label for="email-input">email</label>
+
+        <input
+          type="text"
+          id="email-input"
+          required
+          pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+        />
+
+        <span class="email-error hide"></span>
+      </div>
+
+      <div class="country">
+        <label for="country-input">country</label>
+
+        <select name="country-input" id="country-input">
+          <option value="" selected disabled hidden>Pick country</option>
+          <option value="IND">IND</option>
+          <option value="USA">USA</option>
+          <option value="IL">IL</option>
+          <option value="UK">UK</option>
+          <option value="FR">FR</option>
+        </select>
+
+        <span class="country-error hide"></span>
+      </div>
+
+      <div class="zip">
+        <label for="zip-input">zipcode</label>
+        <input type="number" id="zip-input" />
+        <span class="zip-error hide"></span>
+      </div>
+
+      <div class="pwd">
+        <label for="pwd-input">pwd</label>
+        <input type="password" id="pwd-input" />
+        <span class="pwd-error hide"></span>
+      </div>
+
+      <div class="confirm-pwdf">
+        <label for="confirm-pwd-input">confirm pwd</label>
+        <input type="password" id="confirm-pwd-input" />
+        <span class="confirm-pwd-error hide"></span>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
